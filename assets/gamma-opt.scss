@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+
+$body-bg: #ffffff;
+$body-color: #343a40;
+$link-color: #00528D;
+$presentation-heading-color: #00528D;
+
+$presentation-font-size-root: 36px;
+
+/*-- scss:rules --*/
+
+/* Progress bar */
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #00528D;
+  height: 1%;
+}
+
+/* Define alert highlight (use as link) */
+a[href='alert'] {
+  color: #F4802E;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.reveal .slide-logo {
+  max-height: 40px !important;
+}
+
+.reveal .footer {
+  font-size: 20px !important;
+}

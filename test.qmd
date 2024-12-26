@@ -1,0 +1,242 @@
+---
+title: "Template slides"
+author: "Fabricio Oliveira"
+institute: "Aalto University"
+department: "Department of Mathematics and Systems Analysis"
+from: markdown+emoji
+format: 
+  revealjs:
+    theme: [assets/gamma-opt.scss]
+    footer: "Location, date, email"
+    logo: assets/gamma-opt.svg
+    toc: true
+    toc-depth: 1 #use two to have slide titles. Doesn't work with animations
+    toc-title: "Outline"
+transition: slide    
+bibliography: assets/references.bib
+jupyter: julia-1.10
+---
+
+# First Section
+
+<!-- Creates a slide -->
+## First slide
+
+
+## Second slide
+
+<!-- Incremental lists -->
+::: {.incremental} 
+- One
+- Two
+- Three 
+:::
+
+In than fade-out requires quite a lot of work and is annooying, but can be done
+
+::: {.fragment .fade-in-then-semi-out}
+- Three
+:::
+::: {.fragment .fade-in-then-semi-out}
+- Two
+:::
+::: {.fragment .fade-in-then-semi-out}
+- One
+:::
+
+<!-- How to add alerts and reference figures that are code generated -->
+## Third slide
+For a [demonstration](alert) of a line plot on a polar axis, see @fig-polar.
+
+```{julia}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+using Plots
+
+x = collect(1:0.1:100)
+f(x) = x^3 - 2*x +  5
+
+plot(f.(x), legend=false)
+```
+
+<!-- Displaying code -->
+## Fourth slide: code
+
+```julia
+using Plots
+
+x = collect(1:0.1:100)
+f(x) = x^3 - 2*x +  5
+
+plot(f.(x), legend=false)
+```
+
+
+# New section
+
+
+## Math!
+
+Testing inline equation $x \in \mathbb{R}^n$
+
+:::{math}
+\begin{align}
+Ax & = b \\
+Bx + Dy & = e 
+\end{align}
+:::
+
+
+# Third section
+
+<!-- Multi-column layout -->
+## Multi-column layout, aside and footnotes
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column^[A footnote on left column]
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
+
+<!-- Using callouts is a nice feature this allows -->
+## Admonitions (call outs)
+
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: {.callout-warning}
+## Warning with Title
+
+This is an example of a callout with a title.
+:::
+
+Other types:
+
+::: {.callout-important }
+## Important
+:::
+
+::: {.callout-tip }
+## Tip
+:::
+
+::: {.callout-caution }
+## Caution
+:::
+
+<!-- Adding a figure -->
+## Image and text
+
+Here is an image (@fig-chameleon):
+
+![A picture of a chameleon](figures/image.png){#fig-chameleon .lightbox}
+
+The image is clickable (lightbox)
+
+<!-- Animations -->
+## Animations {auto-animate=true}
+
+Animations are automatically generated, by matching element between two successive slides.
+
+::: {style="margin-top: 100px;"}
+Make this big and red
+::: 
+
+
+## Animations {auto-animate=true}
+
+Animations are automatically generated, by matching element between two successive slides.
+
+::: {style="margin-top: 100px; font-size: 3em; color: red;"}
+Make this big and red
+:::
+
+For it to work it must have the sme words, otherwise it reverts to a simple, appearance effect, like this
+
+
+## Animations {auto-animate=true}
+
+It matches where previous text went and auto-animate
+
+
+## Animations {auto-animate=true}
+
+It matches where previous text went and auto-animate
+
+It also works with text and math
+
+:::{math}
+\begin{align*}
+  \min & f(x) \\
+  & g(x) \le 0 
+\end{align*}
+:::
+
+
+## Animations {auto-animate=true}
+
+It matches where previous text went and auto-animate
+
+It also works with text and math
+
+But not increments, only fade-in and displacement
+
+:::{math}
+\begin{align*}
+  \min & f(x) \\
+  & g(x) \le 0 
+\end{align*}
+:::
+
+
+## Animations with code {auto-animate=true}
+
+Code envs are automatically picked up for a nicer animation transition
+
+```julia
+using Plots
+
+x = collect(1:0.1:100)
+```
+
+
+## Animations with code {auto-animate=true}
+
+Code envs are automatically picked up for a nicer animation transition
+
+```julia
+using Plots
+
+x = collect(1:0.1:100)
+f(x) = x^3 - 2*x +  5
+
+plot(f.(x), legend=false)
+```
+
+<!-- Using citations and bibtex.bib -->
+## Citations
+
+Fill the file in `assets/reference.bib` and use 
+
+- `@bertsimas2004price` to get this: @bertsimas2004price
+- `[@bertsimas2004price]` to get this: [@bertsimas2004price]
+
+## Bibliography
+
+::: {#refs}
+:::
+
+
